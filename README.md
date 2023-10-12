@@ -25,7 +25,7 @@ have to stick to its past decisions.
 <img width="774" alt="dilemma" src="https://github.com/ML-group-il/perceptual-kalman-filters/assets/147659286/96e10427-06af-42df-b7e5-28cdadf5d9a6">
 
 
-## What's in the paper?
+# What's in the paper?
 
  We study the _Gauss-Markov_ setting with linear observations:
 
