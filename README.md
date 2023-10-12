@@ -3,6 +3,8 @@ Implementation of demo from "PKF: online state estimation under a perfect percep
 
 to execute run: python ./run_osc_demo.py or ./run_demo.sh
 
+<img width="325" alt="PKF" src="https://github.com/ML-group-il/perceptual-kalman-filters/assets/147659286/ce0f3b78-2dfc-416e-8030-99c6b3146916">
+
 # Motivation for perceptual filtering
 **Example**: real time video streaming
 
