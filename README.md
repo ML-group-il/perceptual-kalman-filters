@@ -59,7 +59,7 @@ and the **innovation process** describes the new information carried by the obse
 \mathcal{I}_k=y_{k}-C_{k}\hat{x}^*_{k|k-1}
 ```
 
-We suggest a formalism for linear perceptual filters
+We present the following formalism for linear **perceptual filters**
 ```math
 \hat{x}_{k}=A_{k}\hat{x}_{k-1}+J_k
 ```
@@ -71,3 +71,23 @@ J_{k}=\varPhi_{k}A_{k}\Upsilon_{k}+\Pi_{k}K_{k}\mathcal{I}_{k}+w_{k},\quad w_{k}
 ```
 
 ![sketch](https://github.com/ML-group-il/perceptual-kalman-filters/assets/147659286/b4ee51de-a809-4afd-b96c-6fcce4eed4d8)
+
+$\Upsilon_{k}$ is the **unutilized information** state
+```math
+\Upsilon_{k}\triangleq\hat{x}_{k-1}^{*}-\mathbb{{E}}\left[\hat{x}_{k-1}^{*}|\hat{x}_{0},\ldots,\hat{x}_{k-1}\right]
+```
+
+given by the recursion
+```math
+\varUpsilon_{k+1} = A_k\varUpsilon_{k} +K_k \mathcal{I}_k -  \varPsi_k Q_k^\dagger J_k,
+```
+```math
+\Sigma_{\varUpsilon_{k+1}} 
+= A_k \Sigma_{\varUpsilon_k} A_k^\top +M_k -\varPsi_k      Q_k^\dagger \varPsi_k^\T,
+```
+```math
+\varPsi_k = M_k \Pi_k^\top +A_k \Sigma_{\varUpsilon_k} A_k^\top \varPhi_k^\top. 
+```
+
+# Perceptual Kalman Filter (PKF)
+
