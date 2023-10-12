@@ -98,9 +98,9 @@ We suggest  the simplified form
 J_{k}=\Pi_{k}K_{k}\mathcal{I}_{k}+w_{k},\quad w_{k}\sim\mathcal{N}\left(0,\Sigma_{w_{k}}\right)
 ```
 
-Now, the optimal coefficients are given explicitly (see full details in our oaoer)
+Now, the optimal coefficients are given explicitly (see full details in our paper)
 ```math
-J_{k}=\Pi_{k}K_{k}\mathcal{I}_{k}+w_{k},\quad w_{k}\sim\mathcal{N}\left(0,\Sigma_{w_{k}}\right)
+\Pi_{k}^* = Q_{k}M_{B}^{1/2}\left(M_{B}^{1/2}Q_{k}M_{B}^{1/2}\right)^{1/2 \dagger}M_{B}^{\dagger 1/2}B_{k}M_{k}M_{k}^{\dagger}
 ```
 
 **Algorithm - Perceptual Kalman Filter (PKF):**
@@ -121,7 +121,7 @@ $.
 \hat{x}_{k} = A\hat{x}_{k-1} + \Pi_{k}K_{k}\mathcal{I}_{k} + w_{k}
 ```
 
-
+# Visual demo
 
 
 
