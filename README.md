@@ -3,7 +3,7 @@ Implementation of demo from "PKF: online state estimation under a perfect percep
 
 to execute run: python ./run_osc_demo.py or ./run_demo.sh
 
-# Motivation for perceptual filters
+# Motivation for perceptual filtering
 **Example**: real time video streaming
 
 ![percp_filtering](https://github.com/ML-group-il/perceptual-kalman-filters/assets/147659286/b903bfd9-7c10-4165-810d-1ad24bd3c8d6)
