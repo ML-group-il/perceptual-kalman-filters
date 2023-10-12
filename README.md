@@ -59,7 +59,7 @@ and the **innovation process** describes the new information carried by the obse
 \mathcal{I}_k=y_{k}-C_{k}\hat{x}^*_{k|k-1}
 ```
 
-We present the following formalism for linear **perceptual filters**
+We present the following formalism for linear **perceptual filters** with coefficients $\Pi_{k},\varPhi_{k}$
 ```math
 \hat{x}_{k}=A_{k}\hat{x}_{k-1}+J_k
 ```
@@ -89,5 +89,34 @@ given by the recursion
 \varPsi_k = M_k \Pi_k^\top +A_k \Sigma_{\varUpsilon_k} A_k^\top \varPhi_k^\top. 
 ```
 
-# Perceptual Kalman Filter (PKF)
+# The Perceptual Kalman Filter (PKF)
+
+We suggest  the simplified form
+```math
+J_{k}=\Pi_{k}K_{k}\mathcal{I}_{k}+w_{k},\quad w_{k}\sim\mathcal{N}\left(0,\Sigma_{w_{k}}\right)
+```
+
+Now, the optimal coefficients are given explicitly (see full details in our oaoer)
+```math
+J_{k}=\Pi_{k}K_{k}\mathcal{I}_{k}+w_{k},\quad w_{k}\sim\mathcal{N}\left(0,\Sigma_{w_{k}}\right)
+```
+
+**Algorithm - Perceptual Kalman Filter (PKF):**
+
+FOR k=1 **to** $T$:
+
+**calculate:** $M_{k}=K_{k}S_{k}K_{k}^{\top}$, $B_{k}= \sum_{t=k}^{T} \alpha_{t}(A^{t-k})^{\top}A^{t-k}$,
+$M_{B}=B_{k}M_{k}B_{k}$.
+
+**compute optimal gain:** 
+$\Pi_{k} = Q_{k}M_{B}^{1/2}\left(M_{B}^{1/2}Q_{k}M_{B}^{1/2}\right)^{1/2 \dagger}M_{B}^{\dagger 1/2}B_{k}M_{k}M_{k}^{\dagger}
+$.
+
+**sample:** $w_{k}\sim \mathcal{N}\left(0,Q_{k}-\Pi_{k}M_{k}\Pi_{k}^{\top}\right).$
+
+**update state:** $\hat{x}_{k} = A\hat{x}_{k-1} + \Pi_{k}K_{k}\mathcal{I}_{k} + w_{k}$.
+
+
+
+
 
