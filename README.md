@@ -123,59 +123,6 @@ $.
 
 # Visual demo
 
-
-Users
-Companies
-COLLECTIVES
-Explore Collectives
-LABS
-Discussions
-TEAMS
-Stack Overflow for Teams – Start collaborating and sharing organizational knowledge. 
-How to embed a video into GitHub README.md?
-Asked 12 years, 10 months ago
-Modified 23 days ago
-Viewed 403k times
-430
-
-Is it possible to embed a flash video into README.md on GitHub? It isn't showing up: https://github.com/mattdipasquale/PicSciP
-
-flashgithubembedmarkdown
-Share
-Improve this question
-Follow
-edited Dec 9, 2011 at 18:03
-Joel Coehoorn's user avatar
-Joel Coehoorn
-401k113113 gold badges570570 silver badges797797 bronze badges
-asked Nov 25, 2010 at 17:32
-ma11hew28's user avatar
-ma11hew28
-122k117117 gold badges451451 silver badges651651 bronze badges
-Add a comment
-16 Answers
-Sorted by:
-
-Highest score (default)
-360
-
-Add a url to video file in your ReadMe.
-Github now supports videos, see more detailed answer here: https://stackoverflow.com/a/4279746/1092815
-
-You can see a live example here (See at the end of the readme):
-https://github.com/alelievr/Mixture/blob/0.4.0/README.md
-
-Github Pages
-I strongly recommend placing the video in a project website created with GitHub Pages instead of the readme, like described in VonC's answer; it will be a lot better than any of these ideas. But if you need a quick fix just like I needed, here are some suggestions.
-
-Use a gif
-See aloisdg's answer, result is awesome, gifs are rendered on github's readme ;)
-
-Use a video player picture
-You could trick the user into thinking the video is on the readme page with a picture. It sounds like an ad trick, it's not perfect, but it works and it's funny ;).
-
-Example:
-
 Watch the video
 
 
