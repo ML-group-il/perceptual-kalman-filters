@@ -116,7 +116,10 @@ $.
 
 **sample:** $w_{k}\sim \mathcal{N}\left(0,Q_{k}-\Pi_{k}M_{k}\Pi_{k}^{\top}\right).$
 
-**update state:** $\hat{x}_{k} = A\hat{x}_{k-1} + \Pi_{k}K_{k}\mathcal{I}_{k} + w_{k}$.
+**update state:** 
+```math
+\hat{x}_{k} = A\hat{x}_{k-1} + \Pi_{k}K_{k}\mathcal{I}_{k} + w_{k}
+```
 
 
 
