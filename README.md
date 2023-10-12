@@ -125,7 +125,5 @@ $.
 
 **Watch the video:**
 
-[![Watch the video](https://github.com/ML-group-il/perceptual-kalman-filters/assets/147659286/79a42c44-3f60-4aea-853e-b9dcd7109c47)](https://drive.google.com/file/d/1rVtd3QMNMq86NnzXfX0AQjMJ4IUbVcjz/view)
-
-[![Watch the video](https://drive.google.com/file/d/1rVtd3QMNMq86NnzXfX0AQjMJ4IUbVcjz/preview)](https://drive.google.com/file/d/1rVtd3QMNMq86NnzXfX0AQjMJ4IUbVcjz/view)
+[![Watch the video](https://github.com/ML-group-il/perceptual-kalman-filters/blob/main/figures/slide1.jpg)](https://drive.google.com/file/d/1rVtd3QMNMq86NnzXfX0AQjMJ4IUbVcjz/view)
 
