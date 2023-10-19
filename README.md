@@ -1,8 +1,18 @@
 # perceptual-kalman-filters
-Implementation of demo from "PKF: online state estimation under a perfect perceptual quality constraint" (2023) (https://arxiv.org/abs/2306.02400)
+Implementation of demo from "PKF: online state estimation under a perfect perceptual quality constraint" (Freirich et al., 2023) (https://arxiv.org/abs/2306.02400)
 
 to execute run: python ./run_osc_demo.py or ./run_demo.sh
 
+## Citing us:
+If you find our work inspiring, please cite us using the following Bibtex entry:
+
+> @article{freirich2023perceptual,
+  title={Perceptual Kalman Filters: Online State Estimation under a Perfect Perceptual-Quality Constraint},
+  author={Freirich, Dror and Michaeli, Tomer and Meir, Ron},
+  journal={arXiv preprint arXiv:2306.02400},
+  year={2023}
+  }
+  
 <img width="325" alt="PKF" src="https://github.com/ML-group-il/perceptual-kalman-filters/assets/147659286/ce0f3b78-2dfc-416e-8030-99c6b3146916">
 
 # Motivation for perceptual filtering
@@ -17,7 +27,7 @@ Reconstruction to the viewer must be done in **real-time**.
 
 reconstructed scene must look **natural**.
 
-The latter **realism** demand means that not only each frame should look as a natural image, but motion should look natural too.
+The latter demand for **realism** means that not only each frame should look as a natural image, but motion should look natural too.
 That makes us face the **Temporal Consistency dilemma**: Estimation cannot suddenly change the motion in
 the output video, because such an abrupt change
 would deviate from natural video statistics. Thus,
@@ -29,7 +39,7 @@ have to stick to its past decisions.
 
 # What's in the paper?
 
- We study the _Gauss-Markov_ setting with linear observations:
+ We study the theoretic _Gauss-Markov_ setting with linear observations:
 
 $x_{k}=A_{k}x_{k-1}+q_{k}, k=1,...,T$, 
 
@@ -105,18 +115,21 @@ Now, the optimal coefficients are given explicitly (see full details in our pape
 
 **Algorithm - Perceptual Kalman Filter (PKF):**
 
-FOR k=1 **to** $T$:
+>**FOR** k=1 **to** T **DO**:
 
-**calculate:** $M_{k}=K_{k}S_{k}K_{k}^{\top}$, $B_{k}= \sum_{t=k}^{T} \alpha_{t}(A^{t-k})^{\top}A^{t-k}$,
+>**calculate:**
+>
+>$`M_{k}=K_{k}S_{k}K_{k}^{\top}`$, $'B_{k}= \sum_{t=k}^{T} \alpha_{t}(A^{t-k})^{\top}A^{t-k}'$,
 $M_{B}=B_{k}M_{k}B_{k}$.
 
-**compute optimal gain:** 
+>**compute optimal gain:**
+>
 $\Pi_{k} = Q_{k}M_{B}^{1/2}\left(M_{B}^{1/2}Q_{k}M_{B}^{1/2}\right)^{1/2 \dagger}M_{B}^{\dagger 1/2}B_{k}M_{k}M_{k}^{\dagger}
 $.
 
-**sample:** $w_{k}\sim \mathcal{N}\left(0,Q_{k}-\Pi_{k}M_{k}\Pi_{k}^{\top}\right).$
+>**sample:** $w_{k}\sim \mathcal{N}\left(0,Q_{k}-\Pi_{k}M_{k}\Pi_{k}^{\top}\right).$
 
-**update state:** 
+>**update state:** 
 ```math
 \hat{x}_{k} = A\hat{x}_{k-1} + \Pi_{k}K_{k}\mathcal{I}_{k} + w_{k}
 ```
