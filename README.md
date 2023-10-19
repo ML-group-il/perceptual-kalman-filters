@@ -1,17 +1,26 @@
 # perceptual-kalman-filters
 Implementation of demo from "PKF: online state estimation under a perfect perceptual quality constraint" (Freirich et al., 2023) (https://arxiv.org/abs/2306.02400)
 
-to execute run: python ./run_osc_demo.py or ./run_demo.sh
+to execute run: 
+```bash
+python ./run_osc_demo.py
+```
+or 
+ ```bash
+./run_demo.sh
+```
 
 ## Citing us:
 If you find our work inspiring, please cite us using the following Bibtex entry:
 
-> @article{freirich2023perceptual,
+```
+ @article{freirich2023perceptual,
   title={Perceptual Kalman Filters: Online State Estimation under a Perfect Perceptual-Quality Constraint},
   author={Freirich, Dror and Michaeli, Tomer and Meir, Ron},
   journal={arXiv preprint arXiv:2306.02400},
   year={2023}
   }
+```
   
 <img width="325" alt="PKF" src="https://github.com/ML-group-il/perceptual-kalman-filters/assets/147659286/ce0f3b78-2dfc-416e-8030-99c6b3146916">
 
@@ -118,22 +127,23 @@ Now, the optimal coefficients are given explicitly (see full details in our pape
 >**FOR** k=1 **to** T **DO**:
 
 >**calculate:**
->
->$`M_{k}=K_{k}S_{k}K_{k}^{\top}`$, $'B_{k}= \sum_{t=k}^{T} \alpha_{t}(A^{t-k})^{\top}A^{t-k}'$,
-$M_{B}=B_{k}M_{k}B_{k}$.
-
+```math
+M_{k}=K_{k}S_{k}K_{k}^{\top},
+B_{k}= \sum_{t=k}^{T} \alpha_{t}(A^{t-k})^{\top}A^{t-k},
+M_{B}=B_{k}M_{k}B_{k}.
+```
 >**compute optimal gain:**
->
-$\Pi_{k} = Q_{k}M_{B}^{1/2}\left(M_{B}^{1/2}Q_{k}M_{B}^{1/2}\right)^{1/2 \dagger}M_{B}^{\dagger 1/2}B_{k}M_{k}M_{k}^{\dagger}
-$.
-
->**sample:** $w_{k}\sim \mathcal{N}\left(0,Q_{k}-\Pi_{k}M_{k}\Pi_{k}^{\top}\right).$
-
+```math
+\Pi_{k} = Q_{k}M_{B}^{1/2}\left(M_{B}^{1/2}Q_{k}M_{B}^{1/2}\right)^{1/2 \dagger}M_{B}^{\dagger 1/2}B_{k}M_{k}M_{k}^{\dagger}
+```
+>**sample:**
+```math
+w_{k}\sim \mathcal{N}\left(0,Q_{k}-\Pi_{k}M_{k}\Pi_{k}^{\top}\right).
+```
 >**update state:** 
 ```math
 \hat{x}_{k} = A\hat{x}_{k-1} + \Pi_{k}K_{k}\mathcal{I}_{k} + w_{k}
 ```
-
 # Visual demo
 
 **Watch the video:**
