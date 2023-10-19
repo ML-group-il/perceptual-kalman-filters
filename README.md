@@ -104,7 +104,7 @@ given by the recursion
 ```
 ```math
 \Sigma_{\varUpsilon_{k+1}} 
-= A_k \Sigma_{\varUpsilon_k} A_k^\top +M_k -\varPsi_k      Q_k^\dagger \varPsi_k^\T,
+= A_k \Sigma_{\varUpsilon_k} A_k^\top +M_k -\varPsi_k      Q_k^\dagger \varPsi_k^\top,
 ```
 ```math
 \varPsi_k = M_k \Pi_k^\top +A_k \Sigma_{\varUpsilon_k} A_k^\top \varPhi_k^\top. 
