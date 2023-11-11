@@ -1,5 +1,5 @@
 # perceptual-kalman-filters
-Implementation of demo from "PKF: online state estimation under a perfect perceptual quality constraint" (Freirich et al., 2023) (Arxiv: https://arxiv.org/abs/2306.02400)(Poster: https://neurips.cc/media/PosterPDFs/NeurIPS%202023/71479.png?t=1699544143.6985004)
+Implementation of demo from "PKF: online state estimation under a perfect perceptual quality constraint" (Freirich et al., 2023) (Arxiv: https://arxiv.org/abs/2306.02400) (Poster: https://neurips.cc/media/PosterPDFs/NeurIPS%202023/71479.png?t=1699544143.6985004)
 
 to execute run: 
 ```bash
